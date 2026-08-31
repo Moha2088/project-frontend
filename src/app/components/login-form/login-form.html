@@ -1,0 +1,64 @@
+<form  class="flex mt-30 mx-auto gap-5 p-10 flex-col border-2 border-gray-200 w-130  rounded-lg">
+    <div>
+        <div class="mb-10">
+            <p class="text-xl font-bold">
+                Login
+            </p>
+        </div>
+
+        <div class="mb-1">
+            <label class="font-bold" for="email">
+                Email
+            </label>
+        </div>
+    
+        <div>
+            <input 
+                formControlName="email"
+                class="p-2 text-xs w-70 border-gray-200 border-2 rounded-lg" 
+                type="email"
+                placeholder="Enter your email"
+            />
+
+            <div 
+                class="error"
+                [class.visible]="loginForm.controls.email.invalid && loginForm.controls.password.touched"
+            >
+                Email is required!
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="mb-1">
+            <label class="font-bold" for="password">
+                Password
+            </label>
+        </div>
+    
+        <div>
+            <input 
+                formControlName="password"
+                class="p-2 border-gray-200 border-2 text-xs w-70 rounded-lg" 
+                type="password"
+                placeholder="Enter your password"
+            />
+            <div
+                class="error"
+                [class.visible]="loginForm.controls.password.invalid && loginForm.controls.password.touched"
+            >
+                Password is required
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <app-button 
+            size="small" 
+            (click)="login($event)"
+            type="submit"
+        >
+            Login
+        </app-button>
+    </div>
+</form>

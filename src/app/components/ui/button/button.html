@@ -1,0 +1,7 @@
+<button 
+    [attr.type]="type()" 
+    [class]="buttonStyles({ variant: variant(), size: size() })"
+    (click)="onClick($event)"
+>
+    <ng-content />
+</button>
